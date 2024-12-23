@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Eve Dinner Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .playfair { font-family: 'Playfair Display', serif; }
+        .lato { font-family: 'Lato', sans-serif; }
+        .great-vibes { font-family: 'Great Vibes', cursive; }
+        
+        .menu-divider {
+            position: relative;
+            height: 30px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .menu-divider::before {
+            content: '❄️';
+            font-size: 24px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .menu-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #165B33, transparent);
+            z-index: 0;
+        }
+
+        .christmas-border {
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #165B33, #BB2528) 1;
+        }
+
+        .dish-image {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .holly {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23165B33' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
+        }
+
+        @keyframes snowfall {
+            0% { transform: translateY(-10px) rotate(0deg); }
+            100% { transform: translateY(10px) rotate(360deg); }
+        }
+
+        .snowflake {
+            color: #fff;
+            position: absolute;
+            animation: snowfall 3s infinite alternate;
+        }
+
+        .bg-christmas-green { background-color: #165B33; }
+        .bg-christmas-red { background-color: #BB2528; }
+        .text-christmas-green { color: #165B33; }
+        .text-christmas-red { color: #BB2528; }
+    </style>
+</head>
+<body class="bg-[#FDF0E6] text-gray-800 lato relative">
+    <!-- Decorative Elements -->
+    <div class="fixed inset-0 pointer-events-none opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 50 50\' fill=\'%23165B33\'%3E%3Cpath d=\'M25,16 L27,19 L29,16 L30,17 L28,20 L31,20 L31,21 L28,21 L30,24 L29,25 L27,22 L25,25 L23,22 L21,25 L20,24 L22,21 L19,21 L19,20 L22,20 L20,17 L21,16 L23,19 L25,16 Z\'/%3E%3C/svg%3E'); background-size: 50px 50px;"></div>
+    </div>
+
+    <header class="relative bg-gradient-to-b from-christmas-green to-[#1A472A] text-white py-16">
+        <div class="absolute top-0 left-0 right-0 h-4 bg-[#BB2528]"></div>
+        <div class="container mx-auto text-center px-4">
+            <div class="great-vibes text-4xl text-[#E6B325] mb-4">Welcome to Our</div>
+            <h1 class="playfair text-christmas-red text-5xl font-bold mb-4">Christmas Eve Dinner</h1>
+            <p class="text-xl text-christmas-green italic">December 24th, 2024</p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-4 bg-[#BB2528]"></div>
+    </header>
+
+    <main class="container mx-auto my-16 px-4 max-w-4xl">
+        <!-- Welcome Section -->
+        <section class="text-center mb-16 relative">
+            <div class="christmas-border bg-white p-8 shadow-lg relative">
+                <div class="absolute -top-4 -left-4 w-8 h-8 bg-[#E6B325] rounded-full"></div>
+                <div class="absolute -top-4 -right-4 w-8 h-8 bg-[#E6B325] rounded-full"></div>
+                <h2 class="playfair text-3xl font-bold text-christmas-green mb-4">Welcome to Our Christmas Eve Celebration</h2>
+                <p class="text-lg leading-relaxed">
+                    As candlelight dances and holiday music fills the air, we invite you to join us for an evening of festive delights. Each dish has been carefully prepared with love and tradition, bringing the magic of Christmas to your plate.
+                </p>
+                <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-[#E6B325] rounded-full"></div>
+                <div class="absolute -bottom-4 -right-4 w-8 h-8 bg-[#E6B325] rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Menu Sections -->
+        <div class="space-y-16">
+            <!-- Appetizer -->
+            <section>
+                <h2 class="playfair text-3xl font-bold text-christmas-green text-center mb-8 relative">
+                    <span class="relative">
+                        Appetizer
+                        <span class="absolute -top-6 -right-6 text-christmas-red">❄️</span>
+                    </span>
+                </h2>
+                <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                    <img src="./img/Baked-Brie.jpg" alt="Baked Brie" class="dish-image mb-6 w-full">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Baked Brie with Honey and Nuts</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Warm, gooey brie topped with a golden drizzle of honey, perfectly toasted walnuts and pecans, and jewel-toned dried cranberries. Served alongside crispy crackers and freshly sliced artisanal baguette.
+                    </p>
+                </div>
+            </section>
+
+            <div class="menu-divider"></div>
+
+            <!-- Main Course -->
+            <section>
+                <h2 class="playfair text-3xl font-bold text-christmas-green text-center mb-8 relative">
+                    <span class="relative">
+                        Main Course
+                        <span class="absolute -top-6 -left-6 text-christmas-red">🎄</span>
+                    </span>
+                </h2>
+                <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                    <img src="./img/chicken.jpg" alt="Roast Chicken" class="dish-image mb-6 w-full">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Garlic Herb Butter Roast Chicken</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A masterfully roasted chicken infused with an aromatic blend of fresh herbs and garlic. The skin is perfectly crisp, while the meat remains tender and succulent. Lovingly basted with herb-infused butter and stuffed with fresh citrus and aromatics.
+                    </p>
+                </div>
+            </section>
+
+            <div class="menu-divider"></div>
+
+            <!-- Sides -->
+            <section>
+                <h2 class="playfair text-3xl font-bold text-christmas-green text-center mb-8 relative">
+                    <span class="relative">
+                        Accompaniments
+                        <span class="absolute -top-6 -right-6 text-christmas-red">🎀</span>
+                    </span>
+                </h2>
+                <div class="grid gap-6">
+                    <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                        <img src="./img/mashed-potatoes.jpg" alt="Mashed Potatoes" class="dish-image mb-6 w-full">
+                        <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Creamy Mashed Potatoes</h3>
+                        <p class="text-gray-700">Velvety smooth potatoes whipped to perfection with rich cream and a subtle hint of roasted garlic.</p>
+                    </div>
+                    <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                        <img src="./img/Honey-Glazed-Carrots.jpg" alt="Honey-Glazed Carrots" class="dish-image mb-6 w-full">
+                        <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Honey-Glazed Carrots</h3>
+                        <p class="text-gray-700">Sweet and tender carrots glazed with local honey and finished with a whisper of warming cinnamon.</p>
+                    </div>
+                    <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                        <img src="./img/green-beans-almondine.jpg" alt="Green Beans Almondine" class="dish-image mb-6 w-full">
+                        <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Green Beans Almondine</h3>
+                        <p class="text-gray-700">Crisp-tender green beans tossed with golden-toasted almonds and finished with a bright splash of lemon.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menu-divider"></div>
+
+            <!-- Dessert -->
+            <section>
+                <h2 class="playfair text-3xl font-bold text-christmas-green text-center mb-8 relative">
+                    <span class="relative">
+                        Dessert
+                        <span class="absolute -top-6 -left-6 text-christmas-red">🍫</span>
+                    </span>
+                </h2>
+                <div class="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 christmas-border">
+                    <img src="./img/Molten-lava-Brownies-Paleo-Gluten-free-Dairy-free-Grain-free.jpg" alt="Chocolate Lava Cake" class="dish-image mb-6 w-full">
+                    <h3 class="playfair text-2xl font-bold mb-4 text-christmas-red">Molten Chocolate Lava Cake</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A heavenly chocolate dessert with a warm, flowing center of rich dark chocolate. Dusted with a snow of powdered sugar and served alongside premium vanilla bean ice cream.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-t from-christmas-green to-[#1A472A] text-white py-12 mt-16 relative">
+        <div class="absolute top-0 left-0 right-0 h-4 bg-[#BB2528]"></div>
+        <div class="container mx-auto text-center px-4">
+            <p class="text-lg text-christmas-green italic mb-4">Thank you for sharing this special evening with me</p>
+            <p class="great-vibes text-4xl text-[#E6B325]">Merry Christmas!</p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-4 bg-[#BB2528]"></div>
+    </footer>
+</body>
+</html>
